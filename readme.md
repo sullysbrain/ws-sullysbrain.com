@@ -5,6 +5,8 @@ Living document of my devops development process for my website, SullysBrain.
 - Django web backend, accessing SQL database. 
 - Cache to static build
 - Have dynamic REST ability to show real time SQL queries. 
+- Build site within Docker environments (one for database, one for main app)
+- Setup Jenkins for git -> production pipeline
 
 
 #### Copyright Notice
