@@ -4,6 +4,8 @@ Living document of my devops development process for my website, SullysBrain.
 ### Progress
 I begain by exporting a rough static version of my current design. First steps will be to clean up the directory structure, setup a cleaner -/css -/img -/js (etc) folders, and fix any broken elements in the CSS.
 
+- Step 1: Create cleaned template for index.html
+
 
 ### Todo
 - Django web backend, accessing SQL database. 
