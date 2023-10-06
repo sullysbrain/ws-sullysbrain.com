@@ -1,0 +1,75 @@
+/*!
+ * Woo 2014
+ * Copyright 2017 Scott Sullivan
+ */
+
+/*
+.woocommerce .page-header-image-single {
+      display: block;
+}
+.product.has-default-attributes.has-children>.images {
+    opacity: 1;
+}
+*/
+
+
+
+/* shows the image on product id = 53 */
+.post-563 div.images {
+display:block;
+float: left;
+width: 350px;
+}
+ 
+div.product div.images {
+opacity: 1!important;
+}
+ 
+/* stretches the product description on full width */
+.post-563 div.summary {
+width: 98%;
+float: none;
+}
+
+.woocommerce-product-gallery__wrapper {
+	padding-right: 20px;
+}
+
+
+.woocommerce-Price-amount amount {
+	float: left;
+}	
+
+.product_meta {
+	display: none;
+}
+
+.quantity {
+	float: left;
+	padding: 0px 0px; 
+	line-height: 18px;
+}
+
+.input-text qty text {
+	font-size: small;	
+}
+.single_add_to_cart_button {
+	clear: both;
+}
+
+.tab-title-description {
+	display: none;
+}
+
+.description_tab {
+	display: none;
+}
+
+#tab_description {
+	background-color: transparent;
+}
+
+.woocommerce-Tabs-panel {
+	background-color: transparent;
+}
+

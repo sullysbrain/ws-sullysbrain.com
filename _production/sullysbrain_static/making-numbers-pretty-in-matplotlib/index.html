@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	
+	<title>Making Numbers Pretty in MatPlotLib | Sully’s Brain</title>
+
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/wp-content/themes/sullysbrain-v16s/-/css/bootstrap.css" rel="stylesheet" media="screen">
+	<script src="/wp-content/themes/sullysbrain-v16s/-/js/jquery-3.4.1.js"></script>
+	<script src="/wp-content/themes/sullysbrain-v16s/-/js/bootstrap.min.js"></script>
+	<script src="/wp-content/themes/sullysbrain-v16s/-/js/init.js"></script>
+	
+
+    <link rel="stylesheet" href="/wp-content/themes/sullysbrain-v16s/-/css/woo17.css" type="text/css">
+
+    <link rel="stylesheet" href="/wp-content/themes/sullysbrain-v16s/-/css/sully17.css?v=1" type="text/css">
+    <link rel="stylesheet" href="/wp-content/themes/sullysbrain-v16s/-/css/sully17-nav.css?v=4" type="text/css">
+	<link rel="stylesheet" media="screen and (max-width:768px)" href="/wp-content/themes/sullysbrain-v16s/-/css/sully17-mobile.css?v=14">
+
+
+
+	<meta property="fb:app_id" content="145436699353390">
+	
+    <meta property="article:author" content="Scott Sullivan">
+	<meta property="article:published_time" content="2022-09-23T21:46:58+00:00">
+
+<!-- 	<meta property="og:description" content="Sharing ideas through technology to create a better world" /> -->
+
+				<meta property="og:image" content="/wp-content/uploads/2022/09/matplotlib-150x150.png">
+	
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/gfs-porson" type="text/css">
+
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v21.3 - https://yoast.com/wordpress/plugins/seo/ -->
+	<link rel="canonical" href="/making-numbers-pretty-in-matplotlib/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Making Numbers Pretty in MatPlotLib | Sully’s Brain">
+	<meta property="og:description" content="Python is an incredible tool for crunching numbers, forcasting things, and cleaning up that data to look presentable. On a basic level, python has many libraries for analyzing data, but it is up to the programmer to take that data and present it in a way that illustrates the data easily. In this post, I &hellip; Continue reading &rarr;">
+	<meta property="og:url" content="/making-numbers-pretty-in-matplotlib/">
+	<meta property="og:site_name" content="Sully’s Brain">
+	<meta property="article:publisher" content="https://www.facebook.com/scott.r.sullivan">
+	<meta property="article:author" content="https://www.facebook.com/scott.r.sullivan">
+	<meta property="article:published_time" content="2022-09-23T21:46:58+00:00">
+	<meta property="article:modified_time" content="2022-09-24T01:35:33+00:00">
+	<meta property="og:image" content="/wp-content/uploads/2022/09/matplotlib.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="628">
+	<meta property="og:image:type" content="image/png">
+	<meta name="author" content="Scott">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@https://twitter.com/scottsullivan">
+	<meta name="twitter:site" content="@scottsullivan">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="Scott">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="5 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"/making-numbers-pretty-in-matplotlib/#article","isPartOf":{"@id":"/making-numbers-pretty-in-matplotlib/"},"author":{"name":"Scott","@id":"/#/schema/person/26e62281a60ee492fb23e5ea6efd102b"},"headline":"Making Numbers Pretty in MatPlotLib","datePublished":"2022-09-23T21:46:58+00:00","dateModified":"2022-09-24T01:35:33+00:00","mainEntityOfPage":{"@id":"/making-numbers-pretty-in-matplotlib/"},"wordCount":611,"commentCount":0,"publisher":{"@id":"/#/schema/person/26e62281a60ee492fb23e5ea6efd102b"},"image":{"@id":"/making-numbers-pretty-in-matplotlib/#primaryimage"},"thumbnailUrl":"/wp-content/uploads/2022/09/matplotlib.png","keywords":["branding","data","dataanalysis","matplotlib","python"],"articleSection":["Articles"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["/making-numbers-pretty-in-matplotlib/#respond"]}]},{"@type":"WebPage","@id":"/making-numbers-pretty-in-matplotlib/","url":"/making-numbers-pretty-in-matplotlib/","name":"Making Numbers Pretty in MatPlotLib | Sully’s Brain","isPartOf":{"@id":"/#website"},"primaryImageOfPage":{"@id":"/making-numbers-pretty-in-matplotlib/#primaryimage"},"image":{"@id":"/making-numbers-pretty-in-matplotlib/#primaryimage"},"thumbnailUrl":"/wp-content/uploads/2022/09/matplotlib.png","datePublished":"2022-09-23T21:46:58+00:00","dateModified":"2022-09-24T01:35:33+00:00","breadcrumb":{"@id":"/making-numbers-pretty-in-matplotlib/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["/making-numbers-pretty-in-matplotlib/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"/making-numbers-pretty-in-matplotlib/#primaryimage","url":"/wp-content/uploads/2022/09/matplotlib.png","contentUrl":"/wp-content/uploads/2022/09/matplotlib.png","width":1200,"height":628},{"@type":"BreadcrumbList","@id":"/making-numbers-pretty-in-matplotlib/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"/"},{"@type":"ListItem","position":2,"name":"Making Numbers Pretty in MatPlotLib"}]},{"@type":"WebSite","@id":"/#website","url":"/","name":"Sully’s Brain","description":"Sharing ideas through technology to create a better world","publisher":{"@id":"/#/schema/person/26e62281a60ee492fb23e5ea6efd102b"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":["Person","Organization"],"@id":"/#/schema/person/26e62281a60ee492fb23e5ea6efd102b","name":"Scott","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"/#/schema/person/image/","url":"/wp-content/uploads/2022/09/sully_img.jpg","contentUrl":"/wp-content/uploads/2022/09/sully_img.jpg","width":938,"height":938,"caption":"Scott"},"logo":{"@id":"/#/schema/person/image/"},"sameAs":["https://www.facebook.com/scott.r.sullivan","https://www.linkedin.com/in/scottrsullivan/","https://twitter.com/https://twitter.com/scottsullivan"],"url":"/author/sully42/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//ajax.googleapis.com">
+
+<meta property="og:image" content="/wp-content/uploads/2022/09/matplotlib-300x157.png">
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=e9b1b332fb4af92c3da87a3129b2be5a" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js?ver=e9b1b332fb4af92c3da87a3129b2be5a" id="jquery-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/1376">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fmaking-numbers-pretty-in-matplotlib%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fmaking-numbers-pretty-in-matplotlib%2F#038;format=xml">
+<meta property="og:title" name="og:title" content="Making Numbers Pretty in MatPlotLib">
+<meta property="og:type" name="og:type" content="article">
+<meta property="og:image" name="og:image" content="/wp-content/uploads/2022/09/matplotlib.png">
+<meta property="og:url" name="og:url" content="/making-numbers-pretty-in-matplotlib/">
+<meta property="og:description" name="og:description" content="Python is an incredible tool for crunching numbers, forcasting things, and cleaning up that data to look presentable. On a basic level, python has many libraries for analyzing data, but it is up to the programmer to take that data and present it in a way that illustrates the data easily. In this post, I &hellip; &lt;a href=&quot;https://sullysbrain.com/making-numbers-pretty-in-matplotlib/&quot;&gt;Continue reading &lt;span class=&quot;meta-nav&quot;&gt;&rarr;&lt;/span&gt;&lt;/a&gt;">
+<meta property="og:locale" name="og:locale" content="en_US">
+<meta property="og:site_name" name="og:site_name" content="Sully’s Brain">
+<meta property="twitter:card" name="twitter:card" content="summary_large_image">
+<meta property="article:tag" name="article:tag" content="branding">
+<meta property="article:tag" name="article:tag" content="data">
+<meta property="article:tag" name="article:tag" content="dataanalysis">
+<meta property="article:tag" name="article:tag" content="matplotlib">
+<meta property="article:tag" name="article:tag" content="python">
+<meta property="article:section" name="article:section" content="Articles">
+<meta property="article:published_time" name="article:published_time" content="2022-09-23T21:46:58+00:00">
+<meta property="article:modified_time" name="article:modified_time" content="2022-09-24T01:35:33+00:00">
+<meta property="article:author" name="article:author" content="/author/sully42/">
+<meta property="article:author" name="article:author" content="https://www.facebook.com/scott.r.sullivan">
+		<style type="text/css" id="wp-custom-css">/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/</style>
+		 
+
+
+
+			<!-- MailerLite Universal -->
+			<script>(function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+			var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+			f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+			var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+			_.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+			
+			var ml_account = ml('accounts', '1589698', 'a9j7o4b0l6', 'load');</script>
+			<!-- End MailerLite Universal -->
+			
+<!-- Facebook Pixel Code -->
+<script>!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '483788095863025');
+fbq('track', 'PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=483788095863025&ev=PageView&noscript=1"></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+  
+<body data-rsssl="1">
+
+    <!-- Navigation -->
+<div class="navbar-wrapper">
+      <div class="container">
+
+
+	    <div class="navbar navbar-inverse navbar-fixed-top">
+	      	<div class="container">
+	        	<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/">Sully's Brain</a>
+	        	</div>
+				<div id="navbar" class="navbar-collapse collapse navbar-brand-right">
+			        <ul class="nav navbar-nav navbar-right">
+			            <li><a href="/searchingforme">Books</a></li>
+			            <li><a href="/articles">Articles</a></li>
+<!-- 			            <li><a href="/reviews">Reviews</a></li> -->
+						<li><button type="button" class="nav navbar-nav btn btn-primary btn-navbar-round" data-toggle="modal" data-target="#modalSubscribe">Sign Up</button></li>
+
+						<li class="nav-item dropdown" data-toggle="modal" data-target="#modalSearch">
+			            	<a href="#" class="nav-link"><span class="glyphicon glyphicon-search"></span></a>
+</li>
+		         	</ul>
+	        	</div>
+<!--/.nav-collapse -->
+	      	</div>
+	    </div>
+
+
+      </div>
+</div>
+
+
+	
+	<!--SEARCH MODAL -->
+	<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog modalSearch" role="document">
+	        <div class="search-form">
+				<form role="search" method="get" id="search-form" action="https://sullysbrain.com/">
+				    <div class="input-group">
+				      	<input type="text" class="form-control" placeholder="Search for..." name="s" id="search-input" value="">
+					  	<span class="input-group-btn">
+					  		<button class="btn btn-primary" id="search-submit" type="submit">Search</button>
+						</span>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Modal -->
+			<div class="modal fade" id="modalSubscribe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content blue">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<!--         <h4 class="modal-title" id="myModalLabel">Ready to Grow Your Creative Productivity?</h4> -->
+			      </div>
+			      <div class="modal-body">
+				      
+				      <img class="pullLeft" src="/wp-content/themes/sullysbrain-v16s/-/img/searchingforme-frontCover_thumb.jpg"> 
+			
+				<p>You are one step away from your free chapter of <i>'Searching For Me'</i>!</p> 
+				<p>Plus, receive my occasional email (about once a month) with news about my news, upcoming books, extras, and more. 
+					Your information won't be shared with anyone else.</p>
+			
+			<!-- Begin Newsletter Signup Form -->
+			
+			
+			<div class="ml-form-embed" data-account="1589698:a9j7o4b0l6" data-form="1406950:k7j5m9">
+			</div>
+			
+
+
+<!-- END MAILCHIMP MOdAL -->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+	<!-- Section #3 -->
+<!--
+	<div class="row" id="site-slogan">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				Hi. I'm Scott Sullivan. I help people improve their lives and creativity so you can be a lamp to the world for the glory of God.
+			</div>
+	</div>
+-->
+	
+	
+	<!-- FACEBOOK SDK -->
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=145436699353390&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<br>
+<div class="row single-page">
+	<div class="col-md-2 col-xs-1">
+	</div>
+	<div class="col-md-8 col-xs-10">
+	
+				
+					<img width="1200" height="628" src="/wp-content/uploads/2022/09/matplotlib.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" fetchpriority="high" srcset="/wp-content/uploads/2022/09/matplotlib.png 1200w, /wp-content/uploads/2022/09/matplotlib-300x157.png 300w, /wp-content/uploads/2022/09/matplotlib-768x402.png 768w" sizes="(max-width: 1200px) 100vw, 1200px">
+
+				<h1>Making Numbers Pretty in MatPlotLib</h1>
+
+				<timestamp class="textCaps">Friday, September 23, 2022</timestamp>
+									
+				
+<p>Python is an incredible tool for crunching numbers, forcasting things, and cleaning up that data to look presentable. On a basic level, python has many libraries for analyzing data, but it is up to the programmer to take that data and present it in a way that illustrates the data easily.</p>
+
+
+
+<p>In this post, I will show how I imported raw data with python&#8217;s MatPlotLib and formatted it to have a more branded look to match my website&#8217;s color pallette. </p>
+
+
+
+<h2 class="wp-block-heading">A Basic Chart: No Formatting</h2>
+
+
+
+<p>The first chart I created is a comparison of Tesla and Apple stock, which I overlayed with the S&amp;P 500 to compare the growth of the two companies compared to that of the overall market.</p>
+
+
+<div class="wp-block-image">
+<figure class="alignleft size-full is-resized"><img decoding="async" src="/wp-content/uploads/2022/09/stockPrice_tsla_base-1.png" alt="" class="wp-image-1379" width="425" height="318" srcset="/wp-content/uploads/2022/09/stockPrice_tsla_base-1.png 552w, /wp-content/uploads/2022/09/stockPrice_tsla_base-1-300x224.png 300w" sizes="(max-width: 425px) 100vw, 425px"></figure>
+</div>
+
+
+<p class="has-text-align-left">The data is pulled from Yahoo&#8217;s Financial API using the pandas framework, so nothing too special. I simply set an array of tickers I wanted and called the get API.</p>
+
+
+
+<p>After I did this, I plotted both Tesla and Apple on the same Y-axis scale, with the price being the Y-axis. As you can see in the image to the left, the graph gets the point across, but looks a bit amateurish.</p>
+
+
+
+<h2 class="wp-block-heading">Adding A Stylesheet</h2>
+
+
+
+<p>To fix this, I enlisted the help of MatPlotLib&#8217;s build-in stylesheets. These stylesheets are similar to a website&#8217;s CSS that are used to format and style text, graphics, and colors across the entire page. Here&#8217;s the beginning of mine:</p>
+
+
+
+<pre class="wp-block-code"><code># Set custom colors. All colors are in web style hex format.
+axes.prop_cycle: cycler('color', &#91;'006058', '57929E', '758D998A', '6D7C847E','6D7C8468','8A92977B'])
+
+
+# Style spines
+axes.linewidth: 1               # Spine edge line width
+axes.spines.top: False          # Display axis spines (True or False)
+axes.spines.left: False         # We only want the bottom spines
+axes.spines.right: False
+axes.spines.bottom: True
+
+# Set line styling for line plots
+lines.linewidth: 3              # line width in points
+lines.solid_capstyle: butt      # Makes a square ending of the line stopping at datapoint
+
+# Grid style
+axes.grid: true                 # display grid or not
+axes.grid.axis: y               # which axis the grid should apply to          
+grid.linewidth: 1               # in points
+grid.color: A5A5A5            # grid color
+axes.axisbelow: True            # Sets axis gridlines below lines and patches.
+axes.facecolor: EFEEE7        # Sets the background face color
+
+# Move tick labels to right side
+ytick.labelleft: False          # draw tick labels on the left side
+ytick.labelright: True          # draw tick labels on the right side
+ytick.alignment: bottom         # alignment of yticks</code></pre>
+
+
+
+<p>Starting with this, I played around with the stylesheet until I was happy with it, and created a graph image out of MatPlotLib that looked more professional and added to the branding of my site.</p>
+
+
+
+<p>To call this stylesheet, I used the following line of code:</p>
+
+
+
+<pre class="wp-block-code"><code>import matplotlib.pyplot as plt
+import matplotlib.ticker as mtick
+
+plt.style.use('../matplotlib/_stylesheets/matplotlib-stylesheet-sullysbrain.mplstyle')</code></pre>
+
+
+
+<p>I continued to modify the graph with inline python code to enhance the overall look and feel.</p>
+
+
+
+<pre class="wp-block-code"><code>fig, ax = plt.subplots()
+tesla = data&#91;'TSLA']
+apple = data&#91;'AAPL']
+sp500 = data&#91;'^GSPC']
+
+ax.plot(data&#91;'TSLA'], label='Tesla', alpha=0.8, linewidth=2)
+ax.plot(data&#91;'AAPL'], label='Apple')
+
+ax.set_title("Stock Prices")
+ax.set_ylim(0)
+ax.yaxis.set_label_position("right")
+ax.yaxis.tick_right()
+
+# Add title &amp; subtitle
+ax.text(x=.08, y=.86, 
+        s="Tesla v. Apple v. S&amp;P500", 
+        transform=fig.transFigure, 
+        ha='left', 
+        fontsize=20, 
+        alpha=.6)
+
+plt.show()</code></pre>
+
+
+
+<h2 class="wp-block-heading">Seeing The Results</h2>
+
+
+
+<p>I added a few more minor tweaks after this to include the copyright and data source attribution, and the reslulting graph from python&#8217;s <em>plot()</em> command resulted in the following design.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1500" height="936" src="/wp-content/uploads/2022/09/stockPrice_tsla_branded-1500x936.png" alt="" class="wp-image-1381" srcset="/wp-content/uploads/2022/09/stockPrice_tsla_branded-1500x936.png 1500w, /wp-content/uploads/2022/09/stockPrice_tsla_branded-300x187.png 300w, /wp-content/uploads/2022/09/stockPrice_tsla_branded-768x479.png 768w, /wp-content/uploads/2022/09/stockPrice_tsla_branded-1536x959.png 1536w, /wp-content/uploads/2022/09/stockPrice_tsla_branded-2048x1278.png 2048w" sizes="(max-width: 1500px) 100vw, 1500px"></figure>
+
+
+
+<p>By the way, I&#8217;m working on another post in preparation for Tesla&#8217;s AI Day next week. Over the past year, I have been tracking Tesla&#8217;s developments in chip design, AI research, and what it will look like as a company in the coming years. My upcoming post will highlight this analysis. Hint: I&#8217;m very bullish on Tesla&#8217;s future.</p>
+
+
+
+<p>Another macro that I am following is the growth and development that China has had in the technology industry and what implications this may have. As a teaser in this research, I am tracking the GDP of several countries to analyze trends. I think this chart that I created makes one trend very obvious. The United States is still the king economy. But China is quickly catching up. </p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1500" height="921" src="/wp-content/uploads/2022/09/gdp_rising_above-1500x921.png" alt="" class="wp-image-1382" srcset="/wp-content/uploads/2022/09/gdp_rising_above-1500x921.png 1500w, /wp-content/uploads/2022/09/gdp_rising_above-300x184.png 300w, /wp-content/uploads/2022/09/gdp_rising_above-768x471.png 768w, /wp-content/uploads/2022/09/gdp_rising_above-1536x943.png 1536w, /wp-content/uploads/2022/09/gdp_rising_above-2048x1257.png 2048w" sizes="(max-width: 1500px) 100vw, 1500px"></figure>
+
+
+
+<p>Many predictions from just ten or fifteen years ago have fallen short, calling for China to overtake the United States by as early as 2015. Needless to say, this never happened. One factor was the global shutdown. There have been other developments. Former President Trump had banned companies like Google, Intel, and Qualquamm from selling chips to China. And recently, the US banned chipmakers from selling their top AI chips to China and Russia. Again, this is a post for another day, but something I am following very closely.</p>
+
+
+
+<h2 class="wp-block-heading">Wrapping Up</h2>
+
+
+
+<p> If you are using MatPlotLib or any other library for illustrating data, I would highly recommend how that data is presented. Take another look at the default graph at the top of this post and look at how much more impact the branded ones have. </p>
+
+
+
+<p>Data is important. Presenting data in a compelling way can be just as important.</p>
+
+
+				<br><hr>
+				
+				<!-- RELATED POSTS -->
+				<div id="relatedposts">
+<h3>You might also like:</h3>						
+						<!-- Basic Card with Image, Title and Description -->
+						<div class="col-md-3 " style="padding: 5px; margin: 0px;">
+							<div class="card text-center relatedposts">
+								  
+									<a href="/machine-learning-to-predict-future-housing-prices/">
+										<img class="card-img-top " src="/making-numbers-pretty-in-matplotlib/<img_width" height="600" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/03/featuredImage_housing.png 1200w, /wp-content/uploads/2023/03/featuredImage_housing-300x150.png 300w, /wp-content/uploads/2023/03/featuredImage_housing-768x384.png 768w" sizes="(max-width: 1200px) 100vw, 1200px">  
+										 
+									</a>
+																<div class="card-body relatedposts" style="overflow: hidden;">
+									<h3><a href="/machine-learning-to-predict-future-housing-prices/">Machine Learning to Predict Future Housing Prices</a></h3>
+								</div>
+							</div>
+						</div>									
+
+
+						
+											
+						<!-- Basic Card with Image, Title and Description -->
+						<div class="col-md-3 " style="padding: 5px; margin: 0px;">
+							<div class="card text-center relatedposts">
+								  
+									<a href="/diving-into-machine-learning/">
+										<img class="card-img-top " src="/making-numbers-pretty-in-matplotlib/<img_width" height="628" alt="Machine Learning in Jupyter Notebook" decoding="async" loading="lazy" srcset="/wp-content/uploads/2022/09/jupyter-fb2022a.png 1200w, /wp-content/uploads/2022/09/jupyter-fb2022a-300x157.png 300w, /wp-content/uploads/2022/09/jupyter-fb2022a-768x402.png 768w" sizes="(max-width: 1200px) 100vw, 1200px">  
+										 
+									</a>
+																<div class="card-body relatedposts" style="overflow: hidden;">
+									<h3><a href="/diving-into-machine-learning/">Started My Dive Into Machine Learning</a></h3>
+								</div>
+							</div>
+						</div>									
+
+
+						
+					</div>				
+				
+				<div class="ml-form-embed" data-account="1589698:a9j7o4b0l6" data-form="1409610:d3i1h0">
+				</div>
+
+
+
+
+
+
+				<div class="row bioTag">
+				<hr>
+					<div class="bioPic alignleft">
+					</div>
+					<div class="bio">
+						<p class="bio">Hi. I'm Scott Sullivan, a slave of Christ, author, AI programmer, and animator. 
+						I spend my time split between the countryside of Lancaster, Pa, and Northern Italy, near Cinque Terre and La Spezia. </p>
+						
+						<p class="bio">In addition to improving lives through data analytics with my BS in Computer Science, 
+						I also published, <a href="/searchingforme/">Searching For Me</a>, 
+						my first memoir, about my adoption, search for my biological family, and how it affected my faith.<br></p>
+					</div>
+				<hr>
+				</div>
+
+
+				 
+					
+				
+											      <!-- This is to WP-PostViews widget plugin -->
+	
+				
+	</div> <!-- end article -->
+
+</div> <!-- end below the fold -->
+
+<script>var refTagger = {
+		settings: {
+			bibleVersion: "ESV"			
+		}
+	};
+	(function(d, t) {
+		var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+		g.src = "//api.reftagger.com/v2/RefTagger.js";
+		s.parentNode.insertBefore(g, s);
+	}(document, "script"));</script>
+
+
+
+<div id="footerpadding"></div>
+
+<!-- <script type="text/javascript" src="https://sullysbrain.com/wp-content/themes/sullysbrain-v16s/-/js/custom.js"></script> -->
+
+<div id="footer">
+	<p>Entire site, Copyright 2020, Scott Sullivan. All rights reserved.</p>
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-1652023-13', 'auto');
+  ga('send', 'pageview');</script>
+
+
+
+</div>
+
+
+</body>
+</html>
