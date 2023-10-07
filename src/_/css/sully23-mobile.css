@@ -1,0 +1,106 @@
+/*!
+ * Sully 2014
+ * Copyright 2014 Scott Sullivan
+ */
+
+
+@media(max-width:768px) {
+	#masthead {
+		padding-left: 25px;
+	}
+	body, select, input, textarea {
+		padding: 0;
+		padding-top: 50px;  
+	}
+	.navbar {
+		margin-bottom: 0px;
+	}
+	.navbar-toggle {
+		background-color: black;
+	}
+	.fullPageImg {
+		background-size: cover;
+		height: 262px;
+	}
+	.featuredBanner h1 {
+		padding-top: 0px;
+		margin-top: 0px;
+	}
+	.leftpullquote {
+		width: 100%;
+		padding-top: 0px;
+		margin-top: 0px;
+		margin-bottom: 15px; 
+	}
+	.rightpullquote {
+		width: 100%;
+		padding-top: 0px;
+		margin-top: 0px;
+		margin-bottom: 15px; 
+	}
+	.socialShare {
+		float: none;
+		clear:both;
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+	}
+	.bio {
+		color: #9d9d9d;
+		font-size: 18px;
+		line-height: 22px;
+		margin-left: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	
+	.bioPic {
+		background: url(/wp-content/themes/sullysbrain-v16s/-/img/glassesFun_small.jpg); 
+		background-repeat: no-repeat;    
+	    height: 150px;
+	    width: 150px;
+	    padding-right: 20px;
+	    margin-right: 20px;
+	    clear: both;	
+	}
+	
+	.fullPageBookSearchingWhite {
+		background-size:contain;
+	    background-repeat: no-repeat;
+		margin-top: 0px;
+		height:200px;
+	}
+
+}
+	
+@media(max-width:550px) {
+	.fullPageImg {
+		background-size: cover;
+		background-position: center left -70px;
+		height: 200px;
+	}
+	.featuredBanner {
+		padding-top: 0px;
+	}
+	.featuredBanner h1 {
+		font-size:larger;
+		margin-top: 0px;
+		margin-bottom: 5px;
+		padding-top: 15px;
+	}
+	
+	.fullPageBookSearchingWhite {
+		background-image: url(/wp-content/themes/sullysbrain-v16s/-/img/bookPage_banner_sweater_mobile.jpg);
+		background-size:contain;
+		background-position: left top;
+		height:200px;
+	}
+	
+	.bioPicWithBook {
+		float: none;
+		display: block;
+		margin-left: auto;
+		margin-right: auto 	
+    }
+	
+
+}
