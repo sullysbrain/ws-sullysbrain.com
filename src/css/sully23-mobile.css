@@ -20,11 +20,15 @@
 	}
 	.fullPageImg {
 		background-size: cover;
-		height: 262px;
+		background-position: center left;
+		height: 350px;
+		padding-top: 0px;
 	}
 	.featuredBanner h1 {
-		padding-top: 0px;
+		font-size:larger;
 		margin-top: 0px;
+		margin-bottom: 5px;
+		padding-top: 5px;
 	}
 	.leftpullquote {
 		width: 100%;
@@ -76,16 +80,16 @@
 	.fullPageImg {
 		background-size: cover;
 		background-position: center left -70px;
-		height: 200px;
+		height: 275px;
 	}
 	.featuredBanner {
 		padding-top: 0px;
 	}
 	.featuredBanner h1 {
-		font-size:larger;
+		font-size:large;
 		margin-top: 0px;
 		margin-bottom: 5px;
-		padding-top: 15px;
+		padding-top: 45px;
 	}
 	
 	.fullPageBookSearchingWhite {

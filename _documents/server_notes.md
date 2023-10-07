@@ -8,8 +8,8 @@ To run hpptd on your local system to run a web server, on a Mac, we use the apac
 1. Open Apache Config file in vim: 'sudo vim /etc/apache2/httpd.conf'
 
 2. Modify DocumentRoot:
-	'DocumentRoot "/Users/YourFolder"'
-	'<Directory "/Users/YourFolder">'
+	- 'DocumentRoot "/Users/YourFolder"'
+	- '<Directory "/Users/YourFolder">'
 
 3. Save
 

@@ -1,6 +1,6 @@
 /*!
- * Sully 2014
- * Copyright 2014 Scott Sullivan
+ * Sully 2023
+ * Copyright 2023 Scott Sullivan
  */
 
 
@@ -18,9 +18,6 @@
 }
 
 
-
-#wpadminbar { display:none !important;}
-
 .header-tag {
 	color: white;
 	width: 50%;
@@ -28,12 +25,15 @@
 }
 
 
+
+
+/*  MAIN LAYOUT */
 body, select, input, textarea {
 	padding: 0;
-	padding-top: 18px;  
+	padding-top: 0px;  
     margin: 0 auto;  
 /*     background: #fdfdfd;   */
-    background: #eaeaea;  
+    background: #acb7c0;  
 	font-size: 20px;
 	line-height: 32px;
 	font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif; 
@@ -46,13 +46,16 @@ body, select, input, textarea {
 }
 
 
-/*  GENERAL FORMATTING  */
+
+
+
+/*  TYPOGRAPHY  */
 
 a {color: #74afb5); text-decoration: none; border-bottom: 1px dotted #000;}
 a:hover {color: #8394ad; text-decoration: none; border-bottom: 1px dotted #000; background-color: #d1d1d1;}
 
 h1 {
-	color:black;
+	color:rgb(35, 35, 35);
 	display: block;
 	font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
 	font-weight: lighter;
@@ -61,6 +64,9 @@ h1 {
 }
 h1 a, h1 a:active, h1 a:visited {color:black;}
 h1 a:hover {color: black; background-color: #8fe0e8;}
+.fullPageImg h1 {
+	padding-top: 150px;
+}
 
 h2 {
     font-size: 21px;
@@ -116,11 +122,11 @@ ul {
 	padding-top: 10px;
 	padding-bottom: 15px;
 	color: #a1a1a1;
-	background-color: #e8e8e8;
+	background-color: #527b9b;
 }
 
 .featuredBanner {
-	padding-top: 35px;
+	padding-top: 150px;
 }
 
 .featuredBanner h1 {
@@ -471,15 +477,20 @@ img {
 
 
 .fullPageImg {
-	background-image: url(/-/img/sullysbrain-banner-300.jpg);
-	background-size: cover;
-	background-position: center center;
-    background-repeat: no-repeat;
-	height: 300px;
+	background-image: url(../img/homepage_banner600.png); 
+	background-size: cover;      /* Makes sure the image covers the div fully */
+    background-repeat: no-repeat;/* Ensures the image doesn't repeat */
+    background-position: center; /* Centers the image in the div */
+	width: 100%;                 /* Ensures the div spans the entire width of its container */
+	height: 600px; 
+	display: block;
 }
 
+
+
+
 .fullPageBookSearchingWhite {
-	background-image: url(/-/img/bookPage_banner_sweater.jpg);
+	background-image: url(_/img/bookPage_banner_sweater.jpg);
 	background-size: contain;
 	background-position: center top;
     background-repeat: no-repeat;
