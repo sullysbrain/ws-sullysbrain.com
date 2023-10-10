@@ -2,13 +2,16 @@
 Living document of my devops development process for my website, SullysBrain. 
 
 ### Progress
-I begain by exporting a rough static version of my current design. First steps will be to clean up the directory structure, setup a cleaner -/css -/img -/js (etc) folders, and fix any broken elements in the CSS.
+Installed Django base to begin transferring the static website into the django framework. 
 
 - Step 1: Create cleaned template for index.html
+- Step 2: Installed Django
 
 
 ### Todo
 - Django web backend, accessing SQL database. 
+	- Django template installed
+
 - Cache to static build
 - Have dynamic REST ability to show real time SQL queries. 
 - Build site within Docker environments (one for database, one for main app)
