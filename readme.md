@@ -11,6 +11,7 @@ Installed Django base to begin transferring the static website into the django f
 ### Todo
 - Django web backend, accessing SQL database. 
 	- Django template installed
+	- Base app installed: "pages"
 
 - Cache to static build
 - Have dynamic REST ability to show real time SQL queries. 
