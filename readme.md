@@ -6,6 +6,10 @@ Installed Django base to begin transferring the static website into the django f
 
 - Step 1: Create cleaned template for index.html
 - Step 2: Installed Django
+- Step 3: Installed base apps
+- Step 4: Installed dockerfile
+	- Note: dockerfile must have 0.0.0.0:8000 for now, until I tighten security
+- Step 5: Deploy on fly.io (for now, until I deploy to my own server)
 
 
 ### Todo
