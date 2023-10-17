@@ -2,7 +2,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Homepage</h1>
+<h1>Sully's Brain | Homepage</h1>
+<ul>
+    {% for post in post_list %}
+    <li>{{ post.title }} : {{ post.body }}</li>
+    {% endfor %}
+</ul>
 
 {% endblock content %}
 
