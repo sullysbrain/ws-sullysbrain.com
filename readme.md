@@ -17,6 +17,9 @@ Installed Django base to begin transferring the static website into the django f
 	- Django template installed
 	- Base app installed: "pages"
 
+- Added very bare bones WSGI server and collectstatic. Note: Do a deep dive
+- Added bare bones Whitenoise. Note: do a deep dive.
+
 - Cache to static build
 - Have dynamic REST ability to show real time SQL queries. 
 - Build site within Docker environments (one for database, one for main app)
