@@ -19,6 +19,7 @@ Installed Django base to begin transferring the static website into the django f
 
 - Added very bare bones WSGI server and collectstatic. Note: Do a deep dive
 - Added bare bones Whitenoise. Note: do a deep dive.
+- Begin work switching to PostgreSQL
 
 - Cache to static build
 - Have dynamic REST ability to show real time SQL queries. 
