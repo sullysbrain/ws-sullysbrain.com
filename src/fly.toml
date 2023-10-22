@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for sullysbrain on 2023-10-15T23:11:18-04:00
+# fly.toml app configuration file generated for sullysbrain on 2023-10-22T10:07:50-04:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -8,6 +8,9 @@ primary_region = "bos"
 console_command = "/code/manage.py shell"
 
 [build]
+
+[deploy]
+  release_command = "python manage.py migrate"
 
 [env]
   PORT = "8000"
