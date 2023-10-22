@@ -26,6 +26,14 @@ Installed Django base to begin transferring the static website into the django f
 - Build site within Docker environments (one for database, one for main app)
 - Setup Jenkins for git -> production pipeline
 
+#### Requirements Troubleshoot
+
+When running pipfreeze, I am getting a link to the github repo instead of a specific versionn number. If the requirements has the following:
+
+gunicorn @ git+https://github.com/benoitc/gunicorn.git@430dcdd997b955fa1a8569a07d9cdcbac686fb35
+
+then change it to "gunicorn==20.1.0" to rebuild properly.
+
 
 #### Copyright Notice
 Code is supplied for education, documentation, and genearal sharing. However, all content (ie. website copy, images, and blog posts, articles, and tutorials) are copyrighted by Scott Sullivan. All rights reserved. Basically, please don't copy the actual design, arcle ontent, or images without my written consent. 
