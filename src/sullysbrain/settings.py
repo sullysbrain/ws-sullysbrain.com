@@ -106,7 +106,8 @@ WSGI_APPLICATION = 'sullysbrain.wsgi.application'
 
 
 DATABASES = {
-    "default": env.dj_db_url("DATABASE_URL", default="sqlite:///db.sqlite3"),}
+    "default": env.dj_db_url("DATABASE_URL", default="sqlite:///db.sqlite3"),
+}
 
 #        'USER': 'username',
 #        'PASSWORD': get_secret('DB_PASSWORD'),
@@ -164,5 +165,5 @@ STORAGES = {
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CSRF_TRUSTED_ORIGINS = ["https://*.fly.dev"]
+CSRF_TRUSTED_ORIGINS = ["https://*.fly.dev"] 
 
