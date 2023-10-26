@@ -34,6 +34,9 @@ gunicorn @ git+https://github.com/benoitc/gunicorn.git@430dcdd997b955fa1a8569a07
 
 then change it to "gunicorn==20.1.0" to rebuild properly.
 
+- Also note: pipenv does not work with this config. Use .venv as your virtual environment instead.
+
+
 
 #### Copyright Notice
 Code is supplied for education, documentation, and genearal sharing. However, all content (ie. website copy, images, and blog posts, articles, and tutorials) are copyrighted by Scott Sullivan. All rights reserved. Basically, please don't copy the actual design, arcle ontent, or images without my written consent. 
