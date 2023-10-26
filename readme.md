@@ -11,6 +11,8 @@ Installed Django base to begin transferring the static website into the django f
 	- Note: dockerfile must have 0.0.0.0:8000 for now, until I tighten security
 - Step 5: Deploy on fly.io (for now, until I deploy to my own server)
 
+- Tag: 5.0:  for Chapter 5 deployment
+
 
 ### Todo
 - Django web backend, accessing SQL database. 
