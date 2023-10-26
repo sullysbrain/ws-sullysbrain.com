@@ -13,6 +13,9 @@ Installed Django base to begin transferring the static website into the django f
 
 - Tag: 5.0:  for Chapter 5 deployment
 
+### New Branch: blog_app
+- Created blog_app branch for blog app foundation creation
+
 
 ### Todo
 - Django web backend, accessing SQL database. 
