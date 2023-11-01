@@ -12,7 +12,7 @@ Installed Django base to begin transferring the static website into the django f
 - Step 5: Deploy on fly.io (for now, until I deploy to my own server)
 
 - Tag: 5.0:  for Chapter 5 deployment
-
+- Added second version for blog model of SQL
 
 
 ### New Branch: blog_app
