@@ -13,6 +13,7 @@ Installed Django base to begin transferring the static website into the django f
 
 - Tag: 5.0:  for Chapter 5 deployment
 - Added second version for blog model of SQL
+- Continue adding updated design into Django framework
 
 
 ### New Branch: blog_app
