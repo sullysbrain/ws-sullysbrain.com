@@ -9,8 +9,12 @@
 </head>
 
 <header>
-    <b>Sully's Brain</b> | 
-    <a href="{% url 'home' %}">Home</a> |
+    <div class="nav-left">
+        <h1><a href="{% url 'home' %}">Sully's Brain</a></h1> 
+    </div> | 
+    <div class="nav-right">
+        <a href="{% url 'post_new' %}">+ New Blog Post</a>
+    </div>
 </header>
 
 <div>
