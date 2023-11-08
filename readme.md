@@ -16,6 +16,10 @@ Installed Django base to begin transferring the static website into the django f
 - Continue adding updated design into Django framework
 - Setup for Forms
 
+- Tag 5.1:  User Account addition
+
+
+
 ### New Branch: blog_app
 - Created blog_app branch for blog app foundation creation
 - Use current in development design from SB and build in django.
