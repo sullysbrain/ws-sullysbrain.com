@@ -17,7 +17,7 @@ Installed Django base to begin transferring the static website into the django f
 - Setup for Forms
 
 - Tag 5.1:  User Account addition
-
+- Transition to new mac
 
 
 ### New Branch: blog_app
