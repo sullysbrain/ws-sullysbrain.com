@@ -19,6 +19,7 @@ Installed Django base to begin transferring the static website into the django f
 - Tag 5.1:  User Account addition
 - Migrated to new mac
 - TODO: Switch Pip, venv for upgrade
+- TODO: Finish Account setup
 
 
 ### New Branch: blog_app
