@@ -20,7 +20,7 @@ Installed Django base to begin transferring the static website into the django f
 - Migrated to new mac
 - TODO: Switch Pip, venv for upgrade
 - TODO: Finish Account setup
-
+- TODO: Migrate into Poetry
 
 ### New Branch: blog_app
 - Created blog_app branch for blog app foundation creation
