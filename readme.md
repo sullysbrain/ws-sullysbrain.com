@@ -21,6 +21,7 @@ Installed Django base to begin transferring the static website into the django f
 - TODO: Switch Pip, venv for upgrade
 - TODO: Finish Account setup
 - TODO: Migrate into Poetry
+	- https://www.youtube.com/watch?v=3-drZY3u5vo
 
 ### New Branch: blog_app
 - Created blog_app branch for blog app foundation creation
