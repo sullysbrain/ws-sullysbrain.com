@@ -18,12 +18,21 @@
 </header>
 
 <div>
+    <!-- start new HTML... -->
+    {% if user.is_authenticated %}
+    <p>Hi {{ user.username }}!</p>
+    <p><a href="{% url 'logout' %}">Log out</a></p>
+    {% else %}
+    <p>You are not logged in.</p>
+    <a href="{% url 'login' %}">Log In</a> {% endif %}
+    <!-- end new HTML... -->
     {% block content %}
     {% endblock content %}
 </div>
 
 <br><br>
 <b>copyright 2023. all rights reserved.</b>
+</html>
 
 
 

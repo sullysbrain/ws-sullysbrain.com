@@ -170,3 +170,6 @@ STORAGES = {
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = ["https://*.fly.dev"] 
 
+LOGIN_REDIRECT_URL = "home" 
+LOGOUT_REDIRECT_URL = "home" 
+
