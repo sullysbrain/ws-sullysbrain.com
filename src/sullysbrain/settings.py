@@ -45,7 +45,7 @@ def get_secret(setting, secrets=secrets):
 
 # Import secret key from secret file
 # SECURITY WARNING: keep the secret key used in production secret!
-
+# imported via secure import, not uploaded to repo
 SECRET_KEY = get_secret("SECRET_KEY")
 
 
