@@ -15,8 +15,8 @@ import os
 from pathlib import Path
 from environs import Env
 
-env = Env()  # new
-env.read_env()  # new
+env = Env()
+env.read_env()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -45,13 +45,13 @@ def get_secret(setting, secrets=secrets):
 
 # Import secret key from secret file
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-)8)^&uy%h38zj%h^47)z2nuu4z3oj0cy8fo5ypo!@^2+354sfd'
 
 SECRET_KEY = get_secret("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DEBUG", default=False)
+
 
 ALLOWED_HOSTS = ["*"]
 
