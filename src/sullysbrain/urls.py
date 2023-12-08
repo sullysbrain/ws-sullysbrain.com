@@ -23,3 +23,9 @@ urlpatterns = [
     path("accounts/", include("accounts.urls")),
     path("", include("pages.urls")),
 ]
+
+
+
+
+
+
