@@ -54,8 +54,8 @@ SECRET_KEY = env.str("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=False)
 
 
-ALLOWED_HOSTS = ["*.fly.dev", "localhost", "127.0.0.01"]
-CSRF_TRUSTED_ORIGINS = ["https://*.fly.dev"]
+ALLOWED_HOSTS = ["sullysbrain.fly.dev", "localhost", "127.0.0.01"]
+CSRF_TRUSTED_ORIGINS = ["https://sullysbrain.fly.dev"]
 
 
 # Application definition
